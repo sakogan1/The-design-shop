@@ -48,47 +48,11 @@ app.get('/product/:id', (req, res) => {
         .catch(err => console.log(err))
 })
 app.post('/product/:id', (req, res) => {
-    // const updatedContact = {
-    //     firstName: req.body.firstName,
-    //     lastName: req.body.lastName,
-    //     email: req.body.email,
-    //     age: req.body.age
-    // }
-    // Contact.findByIdAndUpdate(req.params.id, updatedContact)
+
     Item.findByIdAndUpdate(req.params.id, req.body)
         .then(result => {
             res.redirect('/')
         })
         .catch(err => console.log(err))
 })
-
-
-// app.get('/', (req, res) => {
-//     res.end()
-// })
-
-// app.get('/add-new', (req, res) => {
-//     const item = new Item({
-//     })
-//     item.save()
-//         .then((result) => {
-//             res.send(result)
-//         })
-//         .catch((err) => console.log(err))
-// })
-
-// app.get('/gallery', (req, res) => {
-//     item.find()
-//         .then((result) => {
-//             res.send(result)
-//         })
-//         .catch((err) => console.log(err))
-// })
-// app.get('/single', (req, res) => {
-//     item.findById('')
-//         .then((result) => {
-//             res.send(result)
-//         })
-//         .catch((err) => console.log(err))
-// })
 
