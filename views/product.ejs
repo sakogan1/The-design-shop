@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Product Details</title>
+</head>
+<body>
+    <h2><%=items.ProductName%></h2>
+    <img src=<%=items.ProductLink %> alt="<%=items.ProductName %>" class="productImage"><br>      
+    <h3><%= items.Company %></h3>
+    <p><%=items.Price%></p> 
+    <a href="<%=items.LinkShop%>">View on Amazon</a>
+   <div class="controls">
+
+    <a href="/product/<%=items._id%>/delete"><div class="btn">Delete</div></a>
+    <a href="/" class="btn">Go Back</a>
+    <a href="/product/<%=items._id%>" class="btn" onmouseover="hide()">Edit Item</a>
+</div>
+    <form action="/product/<%=items._id%>" method="post" id="form">
+        <input type="text" name="ProductName" value=<%=items.ProductName %>>
+        <input type="text" name="ProductLink" value=<%=items.ProductLink %>>
+        <input type="text" name="Company" value=<%=items.Company %>>
+        <input type="number" name="Price" value=<%=items.Price %> >
+        <input type="text" name="LinkShop" value=<%=items.LinkShop %>>
+        <input type="submit" value="Update" class="btn" id="submit">
+    </form>
+
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
