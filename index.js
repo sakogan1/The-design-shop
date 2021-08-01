@@ -4,8 +4,9 @@ const mongoose = require('mongoose')
 const app = express()
 const PORT = process.env.PORT || 3001
 const Item = require('./models/galleryItem')
-
 const data = require('./Lev3_1_Project_mongoose_the-design-shop - Sheet1 Kopie.json')
+
+require('dotenv').config()
 
 
 
@@ -16,7 +17,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 
-mongoose.connect('mongodb+srv://Samir:bBazvYWL17O5INf2@supercluster.kar4h.mongodb.net/shop?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(`mongodb+srv://Samir:${process.env.envPASS}@supercluster.kar4h.mongodb.net/shop?retryWrites=true&w=majority`, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(result => {
     app.listen(PORT, () => console.log(`http://localhost:${PORT}`))
 })

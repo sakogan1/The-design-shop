@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
 body,html{
     font-family: 'Karla', sans-serif;
+    margin:2vh;
 }
 .grid{
     display: grid;
@@ -59,7 +60,7 @@ body,html{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0 auto;
+    margin: 0 2vh;
 }
 .productImage { 
         width: 80vw;  

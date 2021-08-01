@@ -10,6 +10,11 @@ body,html{
     overflow-x: hidden;
     overflow-y: scroll;
 }
+a{
+    text-decoration: none;
+    cursor:pointer;
+    color: #000;
+}
 .grid{
     display: grid;
     grid-template-columns:1fr 1fr 1fr;
